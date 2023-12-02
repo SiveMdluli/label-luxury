@@ -1,0 +1,145 @@
+/* ////// Lora Font Import \\\\\\\*/
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap');
+
+/* Color[RUle Of #3] HSL(Hue Smoothness, Lightness */
+
+:root {
+  --header-height: 3.5rem;
+
+  --bg-color: hsl(220, 18%, 78%);
+  --bg-color-light: hsl(220, 18%, 86%);
+  --title-color: hsl(220, 8%, 10%);
+  --text-coor: hsl(220, 4%, 32%);
+  --text-color-light: hsl(220, 4%, 55%);
+  --body-color: hsl(220, 18%, 99%);
+  --container-color: hsl(220, 18%, 97%);
+
+  /* ==== Font and typography */
+  /* >> .5rem = 8px | 1rem = 16px << */
+  --body-font: 'Lora', serif;
+
+  --biggest-font-size: 2.25rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*>>> Font Weight >>>> */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 1124px) {
+  :root {
+    --biggest-font-size: 4.5rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --biggest-font-size: 0.813rem;
+  }
+}
+
+/* Base */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-coor);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Reusable CSS Classes */
+.container {
+  max-width: 1024px;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding: 4, 5rem 0 2rem;
+}
+
+.section-title {
+  font-size: var(--h1-font-size);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.main {
+  overflow: hidden;
+}
+
+/* Header + Nav */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  z-index: var(--z-fixed);
+  transition: 0.4s;
+}
+
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+@media screen and (max-width: 1023px) {
+  .nav-menu {
+    position: fixed;
+    bottom: 1.5rem;
+  }
+}
