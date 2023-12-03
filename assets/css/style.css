@@ -141,5 +141,96 @@ img {
   .nav-menu {
     position: fixed;
     bottom: 1.5rem;
+    background-color: var(--body-color);
+    box-shadow: 0 4px 12px hsla(220, 18%, 40%, 0.15);
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 1.25rem 2.8rem;
+    border-radius: 0.5rem;
   }
+
+  .nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-link {
+    color: var(--text-color-light);
+    font-weight: var(--font-medium);
+    display: grid;
+    justify-items: center;
+    row-gap: 0.25rem;
+  }
+
+  .nav-link i {
+    font-size: 1.25rem;
+  }
+
+  .nav-link span {
+    font-size: 0.688rem;
+  }
+}
+
+/* Home Styles */
+.home {
+  background-color: var(--bg-color);
+  overflow: hidden;
+}
+
+.home-container {
+  padding: 4rem 0 1rem;
+  row-gap: 8.5rem;
+}
+
+.home-title {
+  font-size: var(--biggest-font-size);
+  font-weight: 400;
+}
+
+.home-description {
+  color: var(--title-color);
+  margin: 1rem 0 2rem;
+}
+
+.home--title .home-description {
+  line-height: 140%;
+}
+
+.home-images {
+  position: relative;
+  width: 310px;
+  justify-self: center;
+}
+
+.home-images img:nth-child(1) {
+  width: 224px;
+  position: absolute;
+  right: -1.5rem;
+  top: -9.5rem;
+}
+
+.home-images img:nth-child(2) {
+  width: 180px;
+  margin-left: 0.5rem;
+  position: relative;
+}
+
+.button-link {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.button-link i {
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.button-link:hover i {
+  transform: translate(0.25rem);
 }
