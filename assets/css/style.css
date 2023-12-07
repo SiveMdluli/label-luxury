@@ -1,0 +1,393 @@
+/* ////// Lora Font Import \\\\\\\*/
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap');
+
+/* Color[RUle Of #3] HSL(Hue Smoothness, Lightness */
+:root {
+  --header-height: 3.5rem;
+
+  --bg-color: hsl(220, 18%, 78%);
+  --bg-color-light: hsl(220, 18%, 86%);
+  --bg-color-lighter: hsl(220, 18%, 97.9%);
+  --title-color: hsl(220, 8%, 10%);
+  --text-coor: hsl(220, 4%, 32%);
+  --text-color-light: hsl(220, 4%, 55%);
+  --body-color: hsl(220, 18%, 99%);
+  --container-color: hsl(220, 18%, 97%);
+
+  /* ==== Font and typography */
+  /* >> .5rem = 8px | 1rem = 16px << */
+  --body-font: 'Lora', serif;
+  --biggest-font-size: 2.25rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: 0.938rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+
+  /*>>> Font Weight >>>> */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 1124px) {
+  :root {
+    --biggest-font-size: 4.5rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --biggest-font-size: 0.813rem;
+  }
+}
+
+/* Base */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-coor);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Reusable CSS Classes */
+.container {
+  max-width: 1024px;
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding: 3.5rem 0 2rem;
+}
+
+.section-title {
+  font-size: var(--h1-font-size);
+  text-align: center;
+  margin-bottom: 2.75rem;
+  margin-top: 2.75rem;
+}
+
+.main {
+  overflow: hidden;
+}
+
+/* Header + Nav */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  z-index: var(--z-fixed);
+  transition: 0.4s;
+}
+
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+@media screen and (max-width: 1023px) {
+  .nav-menu {
+    position: fixed;
+    bottom: 1.5rem;
+    background-color: var(--body-color);
+    box-shadow: 0 4px 12px hsla(220, 18%, 40%, 0.15);
+    width: 90%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 1.25rem 2.8rem;
+    border-radius: 0.5rem;
+  }
+
+  .nav-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-link {
+    color: var(--text-color-light);
+    font-weight: var(--font-medium);
+    display: grid;
+    justify-items: center;
+    row-gap: 0.25rem;
+  }
+
+  .nav-link i {
+    font-size: 1.25rem;
+  }
+
+  .nav-link span {
+    font-size: 0.688rem;
+  }
+}
+
+/* ===== Change Header Background ======= */
+.scroll-header {
+  background-color: var(--body-color);
+  box-shadow: 0 1px 4px hsl(220, 4%, 15%, 0.1);
+  transition: 1s;
+}
+
+/* Home Styles */
+.home {
+  background-color: var(--bg-color);
+  overflow: hidden;
+}
+
+.home-container {
+  padding: 4rem 0 1rem;
+  row-gap: 8.5rem;
+}
+
+.home-title {
+  font-size: var(--biggest-font-size);
+  font-weight: 400;
+}
+
+.home-description {
+  color: var(--title-color);
+  margin: 1rem 0 2rem;
+}
+
+.home--title .home-description {
+  line-height: 140%;
+}
+
+.home-images {
+  position: relative;
+  width: 310px;
+  justify-self: center;
+}
+
+.home-images img:nth-child(1) {
+  width: 224px;
+  position: absolute;
+  right: -1.5rem;
+  top: -9.5rem;
+}
+
+.home-images img:nth-child(2) {
+  width: 180px;
+  margin-left: 0.5rem;
+  position: relative;
+}
+
+.button-link {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  display: inline-flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.button-link i {
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.button-link:hover i {
+  transform: translate(0.25rem);
+}
+
+/* New Section Styles */
+.new-container {
+  row-gap: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.new-card {
+  justify-self: center;
+}
+
+.new-img {
+  width: 270px;
+  margin-bottom: 1rem;
+}
+
+.new-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 0.75rem;
+  color: var(--title-color);
+}
+
+.new-link i {
+  font-size: 1.25rem;
+  transition: 0.3s;
+}
+
+.new-title {
+  font-size: var(--h2-font-size);
+  margin-bottom: 0.5rem;
+}
+
+.new-subtitle {
+  font-size: var(--smaller-font-size);
+  color: var(--text-coor);
+}
+
+.new-link:hover i {
+  transform: translateX(0.25rem);
+}
+
+/* >>>> Collections Section <<<<<<< */
+.collection {
+  background-color: var(--bg-color-light);
+  overflow: hidden;
+}
+
+.collection-container {
+  position: relative;
+  height: 571px;
+  display: grid;
+  justify-items: center;
+}
+
+.collection-title {
+  font-size: var(--h1-font-size);
+  margin-bottom: 0.75rem;
+}
+
+.collection-explore {
+  display: grid;
+  column-gap: 2rem;
+  position: absolute;
+}
+
+.collection-explore:nth-child(2) {
+  grid-template-columns: 230px max-content;
+  bottom: 1rem;
+  margin-right: 5rem;
+}
+
+.collection-explore:nth-child(1) {
+  grid-template-columns: max-content 230px;
+  top: 0;
+  margin-left: 5rem;
+}
+
+.collection-data-men {
+  margin-top: 2.5rem;
+}
+
+.collection-data-women {
+  align-self: flex-end;
+  margin-bottom: 2.5rem;
+}
+
+/* >>>>>>>>Product Section<<<<<<<<<< */
+.products-container {
+  padding-bottom: 5rem;
+}
+
+.products-card {
+  width: 270px;
+}
+
+.products-img {
+  height: min-content;
+  margin-bottom: 1rem;
+}
+
+.products-title {
+  font-size: var(--title-color);
+  margin-bottom: 0.35rem;
+}
+
+.products-price {
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+/* Swiper Class */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: '';
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  top: initial;
+  bottom: 0;
+  width: initial;
+  height: initial;
+  font-size: 1.5rem;
+  color: var(--title-color);
+}
+
+.swiper-button-prev {
+  left: calc(50% - 2rem);
+}
+
+.swiper-button-next {
+  right: calc(50% - 2rem);
+}
+
+/* Brands Section */
+.brands-container {
+  grid-template-columns: repeat(2, max-content);
+  justify-content: center;
+  column-gap: 1.25rem;
+  background: var(--bg-color-lighter);
+  border-radius: 5%;
+  padding: 0.25rem;
+}
+
+.brand-img {
+  width: 120px;
+}
+
+.brand-img:nth-child(even) {
+  margin-top: 2rem;
+}
